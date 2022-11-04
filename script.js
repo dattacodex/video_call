@@ -15,7 +15,14 @@ function createRoom() {
 		return;
 	}
 	room_id = PRE + room + SUF;
-	peer = new Peer(room_id)
+	peer = new Peer(room_id,
+		       {
+	config: {'iceServers': [
+	  { url: 'stun:stun.l.google.com:19302' },
+	  { url: 'turn:homeo@turn.bistri.com:80', credential: 'homeo' }
+	]} /* Sample servers, please use appropriate ones */
+  }
+		       )
 	peer.on('open', (id) => {
 		console.log("Peer Connected with ID: ", id)
 		hideModal()
