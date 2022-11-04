@@ -18,8 +18,8 @@ function createRoom() {
 	peer = new Peer(room_id,
 		       {
 	config: {'iceServers': [
-	  { url: 'stun:stun.l.google.com:19302' },
-	  { url: 'turn:homeo@turn.bistri.com:80', credential: 'homeo' }
+	  { url: 'stun:stun.l.google.com:19302' }
+	
 	]} /* Sample servers, please use appropriate ones */
   }
 		       )
